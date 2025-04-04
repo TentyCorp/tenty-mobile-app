@@ -9,7 +9,7 @@ const SettingsScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Settings Screen</Text>
-      <Text style={styles.message}>Esta es una pantalla genérica para Settings.</Text>
+      <Text style={styles.message}>Generic Screen Insert Text</Text>
     </View>
   );
 };

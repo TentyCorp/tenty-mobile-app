@@ -7,9 +7,9 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const ChatScreen = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} backgroundColor="#FFC0CB">
       <Text style={styles.header}>Chat Screen</Text>
-      <Text style={styles.message}>Esta es una pantalla genérica para el chat.</Text>
+      <Text style={styles.message}>Generic Screen Insert Text</Text>
     </View>
   );
 };

@@ -7,9 +7,9 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const InteraccionScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Interaccion Screen</Text>
-      <Text style={styles.message}>Esta es una pantalla genérica para Interaccion.</Text>
+    <View style={styles.container} backgroundColor="#FFD700">
+      <Text style={styles.header}>Interaction Screen</Text>
+      <Text style={styles.message}>Generic Screen Insert Text</Text>
     </View>
   );
 };

@@ -8,7 +8,7 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Profile Screen</Text>
-      <Text style={styles.message}>Esta es una pantalla genérica para Profile.</Text>
+      <Text style={styles.message}>Generic Screen Insert Text</Text>
     </View>
   );
 };

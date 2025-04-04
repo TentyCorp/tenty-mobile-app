@@ -8,11 +8,10 @@ const NavegarScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Navegar Screen</Text>
-      <Text style={styles.message}>Esta es una pantalla genérica para Navegar.</Text>
-      <Pressbutton title="Presiona el botón" onPress={handlePress} />
-    </View>
+    <View style={styles.container} backgroundColor="#32CD32">
+      <Text style={styles.header} >Navegation Screen</Text>
+ <Text style={styles.message}>Generic Screen Insert Text </Text>
+          </View>
   );
 };
 
