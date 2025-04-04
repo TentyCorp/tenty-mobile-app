@@ -1,11 +1,16 @@
+// App.js para definir la lógica y estructura de tu aplicación.
+
 import React from 'react';
-import { Provider as PaperProvider } from 'react-native-paper';
-import AppNavigator from './src/navigation/AppNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import AnimTab1 from './src/bottomTab/BottomNavigation.Bar'; // Asegúrate de que la ruta sea correcta
 
 export default function App() {
   return (
-    <PaperProvider>
-      <AppNavigator />
-    </PaperProvider>
+    <NavigationContainer>
+      <AnimTab1 />
+    </NavigationContainer>
   );
 }
+
+
+

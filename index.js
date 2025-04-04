@@ -1,3 +1,5 @@
+// index.js para registrar y arrancar la aplicación.
+
 import { registerRootComponent } from 'expo';
 import App from './App';
 

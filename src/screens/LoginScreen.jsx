@@ -1,41 +1,61 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Button, Text, TextInput } from 'react-native-paper';
+import React, { useState } from 'react';
+import { View, Image } from 'react-native';
+import { Text, TextInput, Button } from 'react-native-paper';
+import { StatusBar } from 'expo-status-bar';
 
-const LoginScreen = ({ navigation }) => {
+export default function LoginScreen({ navigation }) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    // Lógica de autenticación
+    navigation.navigate('Home');
+  };
+
   return (
-    <View style={styles.container}>
-      <Text variant="headlineLarge" style={styles.title}>Login</Text>
+    <View className="flex-1 items-center justify-center bg-white p-4">
+      {/* Logo */}
+      <Image
+        source={require('../../assets/tenty-logo.png')} // Ajusta la ruta a tu logo
+        className="w-32 h-32 mb-6"
+        resizeMode="contain"
+      />
+
+      {/* Título */}
+      <Text variant="headlineLarge" className="mb-6">
+        Iniciar Sesión
+      </Text>
+
+      {/* Campos de entrada */}
       <TextInput
-        label="Email"
-        style={styles.input}
+        label="Correo electrónico"
+        value={email}
+        onChangeText={setEmail}
         keyboardType="email-address"
+        autoCapitalize="none"
+        mode="outlined"
+        className="w-full mb-4"
       />
       <TextInput
         label="Contraseña"
-        style={styles.input}
+        value={password}
+        onChangeText={setPassword}
         secureTextEntry
+        mode="outlined"
+        className="w-full mb-4"
       />
-      <Button mode="contained" onPress={() => navigation.navigate('Home')}>
+
+      {/* Botón de login */}
+      <Button
+        mode="contained"
+        onPress={handleLogin}
+        className="w-full bg-blue-500"
+        contentStyle={{ paddingVertical: 8 }}
+      >
         Ingresar
       </Button>
+
+      <StatusBar style="auto" />
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 20,
-    justifyContent: 'center',
-  },
-  title: {
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  input: {
-    marginBottom: 10,
-  },
-});
-
-export default LoginScreen;
+}
