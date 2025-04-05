@@ -57,15 +57,21 @@ const TabButton = ({ item, onPress, accessibilityState }) => {
   useEffect(() => {
     if (viewRef.current) {
       if (focused) {
-        viewRef.current.animate({
-          0: { scale: 0.5},
-          1: { scale: 1.5},
-        });
+        viewRef.current.animate(
+          {
+            0: { scale: 0.5 },
+            1: { scale: 1.5 },
+          },
+          300 // Duración de la animación en milisegundos (300ms en este caso)
+        );
       } else {
-        viewRef.current.animate({
-          0: { scale: 1.5},
-          1: { scale: 1},
-        });
+        viewRef.current.animate(
+          {
+            0: { scale: 1.5 },
+            1: { scale: 1 },
+          },
+          300 // Duración de la animación en milisegundos (300ms en este caso)
+        );
       }
     }
   }, [focused]);
@@ -95,7 +101,7 @@ const TabButton = ({ item, onPress, accessibilityState }) => {
       <IconComponent
           type={item.type} // Biblioteca de íconos
           name={focused ? item.activeIcon : item.inActiveIcon} // Ícono dinámico
-          color={focused ? '#a60000' : '#00a6a6'} // Color dinámico (color vivo si está activo, color opaco si no)
+          color={focused ? '#a60000' : '#005353'} // Color dinámico (color vivo si está activo, color opaco si no)
           size={25} // Tamaño del ícono
         />
       </Animatable.View>
