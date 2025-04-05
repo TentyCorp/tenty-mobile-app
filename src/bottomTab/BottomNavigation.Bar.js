@@ -2,12 +2,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { useEffect, useRef } from 'react';
 import { SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon, { Icons } from '../Components/Icon'; // Renombrar si es necesario
-import Colors from '../constants/Colors';
 import * as Animatable from 'react-native-animatable';
 import ChatScreen from '../screens/ChatScreen';
 import NavegarScreen from '../screens/NavegarScreen';
 import InteraccionScreen from '../screens/InteraccionScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import IconComponent from '../Components/Icon';
 
 // Array de pestañas con configuraciones
 const TabArr = [
@@ -58,13 +58,13 @@ const TabButton = ({ item, onPress, accessibilityState }) => {
     if (viewRef.current) {
       if (focused) {
         viewRef.current.animate({
-          0: { scale: 0.5, rotate: '0deg' },
-          1: { scale: 1.5, rotate: '360deg' },
+          0: { scale: 0.5},
+          1: { scale: 1.5},
         });
       } else {
         viewRef.current.animate({
-          0: { scale: 1.5, rotate: '360deg' },
-          1: { scale: 1, rotate: '0deg' },
+          0: { scale: 1.5},
+          1: { scale: 1},
         });
       }
     }
@@ -90,11 +90,13 @@ const TabButton = ({ item, onPress, accessibilityState }) => {
       activeOpacity={1}
       style={[styles.container, { top: 0 }]}
     >
+
       <Animatable.View ref={viewRef} duration={1000}>
-        <Icon
-          type={item.type}
-          name={focused ? item.activeIcon : item.inActiveIcon}
-          color={focused ? Colors.primary : Colors.primaryLite}
+      <IconComponent
+          type={item.type} // Biblioteca de íconos
+          name={focused ? item.activeIcon : item.inActiveIcon} // Ícono dinámico
+          color={focused ? '#a60000' : '#00a6a6'} // Color dinámico (color vivo si está activo, color opaco si no)
+          size={25} // Tamaño del ícono
         />
       </Animatable.View>
     </TouchableOpacity>
@@ -115,6 +117,9 @@ const AnimTab1 = () => {
             borderRadius: 16,
             justifyContent: 'center',
             alignItems: 'center',
+            backgroundColor: '#E4E0E1',// Usa el color de fondo definido
+            borderColor: '#D3D3D3', // Borde de la barra
+            borderWidth: 1, // Ancho del borde
           },
         }}
       >
@@ -150,5 +155,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 60,
+   
   },
 });
